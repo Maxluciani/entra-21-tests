@@ -1,5 +1,7 @@
 
 
+using System.Collections.Generic;
+
 namespace entra_21_tests
 {
     public class Exercicios
@@ -45,5 +47,22 @@ namespace entra_21_tests
          }
           return soma;
         }
+        public double Exercicio04(List<int> ages)
+        {
+           double soma = 0.0;
+           var quantidade = ages.Count;
+           foreach (var item in ages)
+           {
+            soma += item;   
+           }
+           var media = (soma / quantidade);
+          return media;
+        }
+         public int Exercicio03(List<int> Lista)
+         {
+           var impares = 0;
+           impares = Lista.Count;
+           return impares;
+         }
     }
 }
