@@ -59,14 +59,6 @@ namespace entra_21_tests
              
         }
         [Fact]
-        public void Media_de_idade()
-        {
-            var exercicios = new Exercicios();
-            var Lista = new List<int>(){10,15,20};
-            double resultado = exercicios.Exercicio04(Lista);
-            Assert.Equal(15, resultado);
-        }
-        [Fact]
         public void Impares_de_0_ate_200()
         {
             var exercicios = new Exercicios();
@@ -79,5 +71,23 @@ namespace entra_21_tests
             int resultado = exercicios.Exercicio03(Lista);
             Assert.Equal(Lista,Lista);
         }
+        [Fact]
+        public void Media_de_idade()
+        {
+            var exercicios = new Exercicios();
+            var Lista = new List<int>(){10,15,20};
+            double resultado = exercicios.Exercicio04(Lista);
+            Assert.Equal(15, resultado);
+        }
+        [Fact]
+        public void Mulheres_entre_18_e_35_anos()
+        {
+            var exercicios = new Exercicios();
+            var Lista = new List<int>(){20,25,30,38,40};
+            int resultado = exercicios.Exercicio05(Lista);
+            Assert.Equal(60,resultado);
+            
+        }
+
     }
 }
