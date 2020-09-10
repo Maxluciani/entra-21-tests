@@ -92,7 +92,10 @@ namespace entra_21_tests
          return total;
     
         } 
-        public double Exercicio07(int cigarrodia,int anosfumante,double preco = 8)
+        public double Exercicio07(
+            int cigarrodia,
+            int anosfumante,
+            double preco)
         {
          //Calcular a quantidade de dinheiro gasta por um fumante. 
 	     //Dados: o numero de anos que ele fuma, o nº de cigarros fumados por 
@@ -104,7 +107,13 @@ namespace entra_21_tests
           double total = (cigarroanual * anosfumante);
           return total;
         }
-
+         public double Exercicio08(double x,double y,double sim)
+         {
+           //Ler dois números inteiros, X e Y, e apresentar mensagem 
+           //informando se o X é múltiplo de Y.
+           sim = (x / y);
+           return sim;
+         }
        
     }
 }

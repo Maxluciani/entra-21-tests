@@ -102,6 +102,14 @@ namespace entra_21_tests
             Assert.Equal(8760,resultado);
             
         }
+         [Theory]
+         [InlineData(10,5,2)]
+        public void É_multiplo(double x,double y , double sim)
+        {
+         var exercicios = new Exercicios();
+         double resultado = exercicios.Exercicio08(x,y,sim);
+          Assert.Equal(2,resultado);
+        }
 
     }
 }
