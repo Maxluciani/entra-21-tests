@@ -6,7 +6,10 @@ namespace entra_21_tests
 {
     public class ExerciciosTest
     {
-       [Fact]
+        private int anosfumante;
+        private int cigarrodia;
+
+        [Fact]
         public void Numeros_de_1_ate_10()
         {
            
@@ -83,9 +86,20 @@ namespace entra_21_tests
         public void Mulheres_entre_18_e_35_anos()
         {
             var exercicios = new Exercicios();
-            var Lista = new List<int>(){20,25,30,38,40};
+            var Lista = new List<int>(){15,25,30,38,40};
             int resultado = exercicios.Exercicio05(Lista);
-            Assert.Equal(60,resultado);
+            Assert.Equal(40,resultado);
+            
+        }
+        [Theory]
+        [InlineData(20,3,8.0)]
+        public void Gasto_de_um_fumante(int cigarrodia,int anosfumante ,double preco)
+        {
+            var exercicios = new Exercicios();
+            double resultado = exercicios.Exercicio07(cigarrodia,anosfumante,preco);
+            cigarrodia = 20;
+            anosfumante = 3;
+            Assert.Equal(8760,resultado);
             
         }
 

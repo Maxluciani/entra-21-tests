@@ -92,5 +92,19 @@ namespace entra_21_tests
          return total;
     
         } 
+        public double Exercicio07(int cigarrodia,int anosfumante,double preco = 8)
+        {
+         //Calcular a quantidade de dinheiro gasta por um fumante. 
+	     //Dados: o numero de anos que ele fuma, o nº de cigarros fumados por 
+         //dia e o preço de uma carteira.
+         
+         var cigarroanual = 0.0;
+         var varejo = (preco / 20);
+          cigarroanual = (varejo * cigarrodia) * 365;
+          double total = (cigarroanual * anosfumante);
+          return total;
+        }
+
+       
     }
 }
