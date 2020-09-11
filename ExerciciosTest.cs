@@ -6,8 +6,8 @@ namespace entra_21_tests
 {
     public class ExerciciosTest
     {
-        private int anosfumante;
-        private int cigarrodia;
+       
+        
 
         [Fact]
         public void Numeros_de_1_ate_10()
@@ -110,6 +110,17 @@ namespace entra_21_tests
          double resultado = exercicios.Exercicio08(x,y,sim);
           Assert.Equal(2,resultado);
         }
+        [Theory]
+        [InlineData(10,4,5,11,true)]
+        public void Primeiro_é_maior_que_segundo_mais_terceiro(int n1,int n2,int n3,int soma,bool resultadoo)
+        {
+            var exercicios = new Exercicios();
+            var resultado = exercicios.Exercicio09(n1,n2,n3,soma,resultadoo);
+            Assert.Equal(n1,resultado);
+
+        }
+         
+        
 
     }
 }

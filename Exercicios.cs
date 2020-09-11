@@ -114,6 +114,27 @@ namespace entra_21_tests
            sim = (x / y);
            return sim;
          }
-       
+         public int Exercicio09(int n1,int soma,int n2,int n3,bool resultadoo)
+         { 
+            
+             //Fazer um algoritmo para ler 03 números reais do teclado e verificar se o  
+		 //primeiro é maior que a soma dos outros dois.
+              
+              soma = n2 + n3;
+          if (n1 > soma)
+          {
+                 resultadoo = true;
+          }
+
+              return n1;
+          
+        
+               
+           
+           
+               
+           
+            
+         }
     }
 }
