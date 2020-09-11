@@ -119,8 +119,23 @@ namespace entra_21_tests
             Assert.Equal(n1,resultado);
 
         }
-         
-        
+        [Theory]
+        [InlineData (5,3,true)]
+        public void A_maior_que_B(int n1,int n2,bool conclusao)
+        {
+          var exercicios = new Exercicios();
+          var resultado = exercicios.Exercicio010Amaior(n1,n2);
+          Assert.Equal(conclusao,resultado);
+        }
+         [Theory]
+        [InlineData (5,8,true)]
+        public void B_maior_que_A(int n1,int n2,bool conclusao)
+        {
+        var exercicios = new Exercicios();
+        var resultado = exercicios.Exercicio010Bmaior(n1,n2);
+        Assert.Equal(conclusao,resultado);
+
+        }
 
     }
 }

@@ -127,6 +127,15 @@ namespace entra_21_tests
           }
 
               return n1;
+         }
+          public bool Exercicio010Amaior(int n1,int n2) => n1 > n2;
+          public bool Exercicio010Bmaior(int n1,int n2) => n2 > n1;
+
+          
+             //Ler 02 números reais do teclado (A e B),
+			//verificar e imprimir qual deles é maior, ou a mensagem "A = B" caso sejam iguais
+            
+
           
         
                
@@ -135,6 +144,5 @@ namespace entra_21_tests
                
            
             
-         }
     }
 }
