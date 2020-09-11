@@ -136,6 +136,16 @@ namespace entra_21_tests
         Assert.Equal(conclusao,resultado);
 
         }
+        [Theory]
+        [InlineData (6,2,3)]
+        public void A_dividido_B(int n1,int n2,int resultado)
+        {
+            var exercicios = new Exercicios();
+            var expectativa = exercicios.Exercicio011(n1,n2,resultado);
+            
+            Assert.Equal(expectativa,resultado);
+
+        }
 
     }
 }

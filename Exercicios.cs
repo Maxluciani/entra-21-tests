@@ -135,6 +135,17 @@ namespace entra_21_tests
              //Ler 02 números reais do teclado (A e B),
 			//verificar e imprimir qual deles é maior, ou a mensagem "A = B" caso sejam iguais
             
+          public int Exercicio011(int n1,int n2,int resultado)
+          {
+             //Ler 02 números inteiros do teclado. Se o segundo for diferente de zero,
+			// calcular e imprimir o quociente do primeiro pelo segundo.
+           
+            if(n2 != 0)
+            {
+                resultado = n1 / n2;
+            }
+               return resultado;
+          }
 
           
         
