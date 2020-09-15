@@ -177,8 +177,52 @@ namespace entra_21_tests
                }
                    return maior;
            }
-
-          
+             public (int,int) Exercicio015(double [] numeros)
+             {
+                  //Ler 10 números e imprimir quantos são múltiplos de 3 e quantos são múltiplos de 5.
+                var multiplos3 = 0;
+                var multiplos5 = 0;
+                for (int i = 0; i < numeros.Length; i++)
+                {
+                    if (numeros[i] % 3 == 0)
+                    {
+                        multiplos3 ++;
+                    }
+                    if(numeros[i] % 5 == 0)
+                    {
+                        multiplos5++;
+                    }
+                }
+                return (multiplos3, multiplos5);
+             }
+            public double Exercicio016(double salario)
+            {
+             // Ler o salário de uma pessoa e imprimir o Salário Líquido de acordo com a 
+             // redução do imposto descrito ao lado:
+             // Menor ou igual a R$ 600,00 - ISENTO
+             // Maior que R$ 600,00 e menor ou igual a 1200 - 20% desconto
+             // Maior que R$ 1.200,00 e menor ou igual a R$2000 - 25% desconto
+             // Maior que R$ 2.000,00 - 30% desconto
+               if (salario < 600)
+               {
+                 return salario;
+               }
+               else if( salario < 1200)
+               {
+                   salario = (salario * 0.8);
+                   return salario;
+               }
+               else if(salario > 1200 && salario< 2000)
+               {
+                   salario = (salario * 0.75);
+                   return salario;
+               }
+               else 
+               {
+                   salario = (salario * 0.7);
+                   return salario;
+               }
+            }
         
                
            

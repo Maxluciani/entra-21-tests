@@ -161,6 +161,25 @@ namespace entra_21_tests
              var maior = exercicios.Exercicio013( 5,65,32,99,87,4,12,96,33,65,68);
              Assert.Equal(99,maior);
          }
+          [Fact]
+         public void Multiplos_de_3_e_5()
+         {
+             var exercicios = new Exercicios();
+             var numeros = new double [10] {15,20,25,27,7,6,30,96,-15,11};
+             var resultado = exercicios.Exercicio015(numeros);
+             // multplos de 3 == 6
+             // multiplos de 5 == 5
+             var expectativa = (6,5);
+             Assert.Equal(expectativa,resultado);
 
+         }
+         [Theory]
+        [InlineData (2000,1400)]
+        public void Salario_limpo(double salario , double salariolimpo)
+        {
+         var exercicios = new Exercicios();
+         var resultado = exercicios.Exercicio016(salario);
+         Assert.Equal(resultado,salariolimpo);
+        }
     }
 }
