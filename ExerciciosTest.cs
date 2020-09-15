@@ -146,6 +146,21 @@ namespace entra_21_tests
             Assert.Equal(expectativa,resultado);
 
         }
+         [Theory]
+        [InlineData (5,8,10,9,18)]
+        public void Soma_dos_pares(int n1,int n2,int n3,int n4,int resultado)
+        {
+            var exercicios = new Exercicios();
+            var expectativa = exercicios.Exercicio012(n1,n2,n3,n4);
+            Assert.Equal(expectativa,resultado);
+        }
+         [Fact]
+         public void Maior_numero()
+         {
+             var exercicios = new Exercicios();
+             var maior = exercicios.Exercicio013( 5,65,32,99,87,4,12,96,33,65,68);
+             Assert.Equal(99,maior);
+         }
 
     }
 }

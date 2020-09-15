@@ -146,6 +146,37 @@ namespace entra_21_tests
             }
                return resultado;
           }
+           public int Exercicio012(int n1,int n2,int n3,int n4)
+           {
+             //Ler 4 números inteiros e imprimir a soma dos que forem par.
+             int soma = 0;
+             List <int> numeros = new List <int> { };
+             numeros.Add (n1);
+             numeros.Add (n2);
+             numeros.Add (n3);
+             numeros.Add (n4);
+             foreach (var item in numeros)
+             {
+                 if(item % 2 ==0)
+                {
+                    
+                 soma += item;
+                }
+             }
+                return soma;
+           }
+           public double Exercicio013(params int [] numeros)
+           {
+               var maior = 0.0;
+               for (int i = 0; i < numeros.Length; i++)
+               {
+                   if(numeros[i] > maior)
+                   {
+                       maior = numeros[i];
+                   }
+               }
+                   return maior;
+           }
 
           
         
