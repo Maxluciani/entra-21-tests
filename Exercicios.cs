@@ -223,6 +223,15 @@ namespace entra_21_tests
                    return salario;
                }
             }
+            public List <int> Exercicio017(int numero)
+            {
+                var resultado = new List<int> ();
+                for (int i = 1; i < 11; i++)
+                {
+                    resultado.Add (numero * i);
+                }
+                return resultado;
+            }
         
                
            

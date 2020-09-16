@@ -181,5 +181,24 @@ namespace entra_21_tests
          var resultado = exercicios.Exercicio016(salario);
          Assert.Equal(resultado,salariolimpo);
         }
+        [Fact]
+        public void Tabuada_de_um_numero()
+        {
+            var exercicios = new Exercicios();
+            var resultado = exercicios.Exercicio017(3);
+            Assert.Collection(resultado,
+            i1 =>{Assert.Equal(3,i1);},
+            i2 =>{Assert.Equal(6,i2);},
+            i3 =>{Assert.Equal(9,i3);},
+            i4 =>{Assert.Equal(12,i4);},
+            i5 =>{Assert.Equal(15,i5);},
+            i6 =>{Assert.Equal(18,i6);},
+            i7 =>{Assert.Equal(21,i7);},
+            i8 =>{Assert.Equal(24,i8);},
+            i9 =>{Assert.Equal(27,i9);},
+            i10 =>{Assert.Equal(30,i10);}
+            );
+            
+        }
     }
 }
