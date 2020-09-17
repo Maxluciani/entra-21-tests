@@ -200,5 +200,14 @@ namespace entra_21_tests
             );
             
         }
+ [Theory]
+        [InlineData (10,13)]
+        public void Calculo_de_preço_de_maças(int macas,double valor)
+        {
+            var exercicios = new Exercicios();
+            var resultado = exercicios.Exercicio018(macas ,valor);
+            Assert.Equal(valor,resultado);
+
+        }
     }
 }
