@@ -22,6 +22,10 @@ namespace entra_21_tests
          }
 
      }
+     public Guid IndentificacaoPorNome(string nome)
+     {
+         return Candidatos.First(x => x.nome == nome ).id;
+     }
 
 
     }

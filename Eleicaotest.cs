@@ -25,5 +25,17 @@ namespace entra_21_tests
           Assert.Equal(1,eleicao.Candidatos.Count);
           Assert.Equal("Joselito",eleicao.Candidatos[0].nome);
       }
+      [Fact]
+      public void não_gerar_quando_os_nomes_forem_iguais()
+      {
+      var eleicao = new Eleicao();
+      string Joselito = "Joselito";
+      string Luis = "Luis Boça";
+       var candidatos = new List<string> {Joselito,Luis};
+       eleicao.CriarCandidatos(candidatos,"Pa$$W0rd");
+       var candidatoJoselito = eleicao.IndentificacaoPorNome(Joselito);
+       var candidatoLuis = eleicao.IndentificacaoPorNome(Luis);
+       Assert.NotEqual(candidatoJoselito,candidatoLuis);
+      }
     }
 }       
