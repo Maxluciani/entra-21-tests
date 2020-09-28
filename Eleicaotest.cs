@@ -72,9 +72,25 @@ namespace entra_21_tests
        Assert.Equal(1,vencedor.Count);
        Assert.Equal(LuisID ,vencedor[0].id);
        Assert.Equal(2,vencedor[0].votos);
-
-
       }
+      public void Empate()
+      {
+        var eleicao = new Eleicao();
+        string Joselito = "Joselito";
+        string Luis = "Luis Boça";
+        var candidatos = new List <string> {Joselito , Luis};
+        eleicao.CriarCandidatos(candidatos ,"Pa$$W0rd");
+        var JoselitoID = eleicao.IndentificacaoPorNome(Joselito);
+        var LuisID = eleicao.IndentificacaoPorNome(Luis);
+        eleicao.voto(JoselitoID);
+        eleicao.voto(LuisID);
+        var vencedores = eleicao.GetWinners();
+        var candidatoJoselito = vencedores.Find(x => x.id == JoselitoID);
+        var candidatoLuis = vencedores.Find(x => x.id == LuisID);
+        Assert.Equal(1,candidatoJoselito.votos);
+        Assert.Equal(1,candidatoLuis.votos);  
+      }
+
           
     }
 }       
