@@ -26,7 +26,7 @@ namespace entra_21_tests
           Assert.Equal("Joselito",eleicao.Candidatos[0].nome);
       }
       [Fact]
-      public void não_gerar_quando_os_nomes_forem_iguais()
+      public void não_gerar_quando_os_nomes_forem_iguais() 
       {
       var eleicao = new Eleicao();
       string Joselito = "Joselito";
@@ -37,5 +37,44 @@ namespace entra_21_tests
        var candidatoLuis = eleicao.IndentificacaoPorNome(Luis);
        Assert.NotEqual(candidatoJoselito,candidatoLuis);
       }
+      [Fact]
+      public void Votar_duas_vezes_em_candidato_Joselito()
+      {
+         var eleicao = new Eleicao();
+         string Joselito = "Joselito";
+         string Luis = "Luis Boça";
+         var candidatos = new List<string>{Joselito , Luis};
+         eleicao.CriarCandidatos(candidatos,"Pa$$W0rd");
+          var JoselitoID = eleicao.IndentificacaoPorNome(Joselito);
+          var LuisID = eleicao.IndentificacaoPorNome(Luis);
+
+          eleicao.voto(JoselitoID);
+          eleicao.voto(JoselitoID);
+
+          var candidatoJoselito = eleicao.Candidatos.Find(x => x.id ==JoselitoID);
+          var candidatoLuis = eleicao.Candidatos.Find(x => x.id == LuisID);
+          Assert.Equal(2, candidatoJoselito.votos);
+          Assert.Equal(0,candidatoLuis.votos);
+      } [Fact]
+      public void Deveria_retornar_Boça_como_vencendor()
+      {
+        var eleicao = new Eleicao();
+        string joselito = "Joselito";
+        string Luis = "Luis Boça";
+        var candidatos = new List<string>{joselito, Luis};
+        eleicao.CriarCandidatos(candidatos,"Pa$$W0rd");
+        var JoselitoID = eleicao.IndentificacaoPorNome(joselito);
+        var LuisID = eleicao.IndentificacaoPorNome(Luis);
+        eleicao.voto(LuisID);
+        eleicao.voto(LuisID);
+        var vencedor = eleicao.GetWinners();
+
+       Assert.Equal(1,vencedor.Count);
+       Assert.Equal(LuisID ,vencedor[0].id);
+       Assert.Equal(2,vencedor[0].votos);
+
+
+      }
+          
     }
 }       
