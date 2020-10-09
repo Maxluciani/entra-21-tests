@@ -177,6 +177,31 @@ namespace entra_21_tests
                }
                    return maior;
            }
+           public (int maior, int meio,int menor) Exercicio014(params int[] a)
+           {
+               //Ler três valores e colocá-los em ordem.
+               var menor = int.MinValue;
+               var meio = int.MinValue;
+               var maior = int.MinValue;
+               for (int i = 0; i < 3; i++)
+               {
+                 if(a[i] > maior)
+                 {
+                     menor = meio;
+                    meio = maior;
+                    maior = a[i];
+                 }  
+                   else if ( a[i] > meio)
+                   {
+                       menor = meio;
+                       meio = a[i];
+                   }
+                   else{
+                       menor = a[i];
+                   }
+               }
+                   return (maior,meio,menor);
+           }
              public (int,int) Exercicio015(double [] numeros)
              {
                   //Ler 10 números e imprimir quantos são múltiplos de 3 e quantos são múltiplos de 5.

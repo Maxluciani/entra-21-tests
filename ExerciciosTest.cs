@@ -161,6 +161,17 @@ namespace entra_21_tests
              var maior = exercicios.Exercicio013( 5,65,32,99,87,4,12,96,33,65,68);
              Assert.Equal(99,maior);
          }
+        [Fact]
+         public void Ordernar_3_numeros()
+         {
+             var exercicios = new Exercicios();
+             var resultado = exercicios.Exercicio014(6,9,1);
+             Assert.Equal(9,resultado.maior);
+             Assert.Equal(6,resultado.meio);
+             Assert.Equal(1,resultado.menor);
+
+
+         }
           [Fact]
          public void Multiplos_de_3_e_5()
          {
