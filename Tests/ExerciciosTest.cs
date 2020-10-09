@@ -165,12 +165,10 @@ namespace entra_21_tests
          public void Ordernar_3_numeros()
          {
              var exercicios = new Exercicios();
-             var resultado = exercicios.Exercicio014(6,9,1);
+             var resultado = exercicios.Exercicio014(6,1,9);
              Assert.Equal(9,resultado.maior);
              Assert.Equal(6,resultado.meio);
              Assert.Equal(1,resultado.menor);
-
-
          }
           [Fact]
          public void Multiplos_de_3_e_5()
