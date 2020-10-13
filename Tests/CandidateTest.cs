@@ -42,6 +42,28 @@ namespace entra_21_tests
             Assert.NotEqual(Joselito.Id, Boça.Id);
 
         }
+        [Theory]
+        [InlineData(null)]
+        [InlineData("")]
+        [InlineData("000.050.000-00")]
+        [InlineData("100.000.111-22")]
+
+        public void Deveria_retornar_falso_quando_CPF_for_invalido(string cpf)
+        {
+            var Joselito = new Candidate("joselito",cpf);
+            var Valido = Joselito.Validate();
+            Assert.False(Valido);
+        }
+        [Theory]
+        [InlineData("000.000.000-00")]
+        [InlineData("00000000000")]
+        public void Deveria_retornar_true_quando_CPF_for_valido(string cpf)
+        {
+          var Joselito = new Candidate("Joselito",cpf);
+          var valido = Joselito.Validate();
+          Assert.True(valido);
+        }
+
 
     }
 }
