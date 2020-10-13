@@ -7,7 +7,7 @@ namespace entra_21_tests
 
     public class Candidate
     {
-      public Guid Id {get; private set;} = new Guid();
+    public Guid Id {get; private set;} = new Guid();
     public string Name {get; private set;}
     public string CPF {get; private set;}
     public int Votes {get; private set;} = 0;
@@ -16,6 +16,7 @@ namespace entra_21_tests
     {
         Name = name;
         CPF = cpf;
+        Id = Guid.NewGuid();
     }
       
     public void Vote()
