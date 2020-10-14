@@ -55,15 +55,35 @@ namespace entra_21_tests
             Assert.False(Valido);
         }
         [Theory]
-        [InlineData("000.000.000-00")]
-        [InlineData("00000000000")]
+        [InlineData("763.754.955-78")]
+        [InlineData("76375495578")]
         public void Deveria_retornar_true_quando_CPF_for_valido(string cpf)
         {
           var Joselito = new Candidate("Joselito",cpf);
           var valido = Joselito.Validate();
           Assert.True(valido);
         }
+        [Theory]
+        [InlineData(null)]
+        [InlineData("")]
+        [InlineData("Joselito")]
+        [InlineData("Joselito 666")]
+        public void Deveria_retornar_falso_quando_nome_for_invalido(string name)
+        {
+          var cpf_valido = "123.456.789-10";
+          var candidato = new Candidate(name,cpf_valido);
+          var valido = candidato.Validate();
+          Assert.False(valido);
 
+        }
+        [Theory]
+        [InlineData("Max Luciani","000.050.000-00")]
+        public void deve_retornar_true_quando_nome_e_CPF_forem_validos(string name,string cpf)
+        {
+         var candidato = new Candidate(name,cpf);
+         var valido = candidato.Validate();
+         Assert.True(valido);
+        }
 
     }
 }
